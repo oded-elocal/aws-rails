@@ -1,2 +1,70 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark px-5">
+  <a class="navbar-brand" href="https://aws-rails.com/">AWS + Rails</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarMain">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item"><a class="nav-link" href="https://aws-rails.com/">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="https://aws-rails.com/videos">Videos</a></li>
+      <li class="nav-item"><a class="nav-link" href="https://aws-rails.com/users">Users</a></li>
+      <li class="nav-item"><a class="nav-link" href="https://aws-rails.com/users/sign_in">Login</a></li>
+      <li class="nav-item"><a class="nav-link" href="https://aws-rails.com/users/sign_up">Sign Up</a></li>
+    </ul>
+
+    <form class="d-flex" action="https://aws-rails.com/videos" accept-charset="UTF-8" method="get">
+      <div id="search-field" class="input-group">
+        <input class="form-control" placeholder="search..." type="text" name="q" id="q">
+        <span class="input-group-append">
+          <button name="button" type="submit" class="btn btn-dark">
+            search
+</button>        </span>
+      </div>
+    </form>  </div>
+</nav>
+
+<%= render 'shared/header' %>
+
+<div id="callouts" class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3 pr-md-3">
+  <div class="bg-light col-md-6 text-center overflow-hidden">
+    <div class="my-3 p-3">
+      <h2 class="display-5">AWS Route 53</h2>
+      <p class="lead">How to Purchase a Domain through Route 53 for a Rails App</p>
+    </div>
+    <div class="video-wrap">
+      <iframe width="560" height="315" src="./AWS + Rails_files/lXul_Q78d6U.html" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+    </div>
+  </div>
+
+  <div class="bg-dark col-md-6 text-center text-white overflow-hidden">
+    <div class="my-3 py-3 row justify-content-center">
+      <article id="contact-form" class="col-sm-9">
+        <h2 class="display-5">Contact Us</h2>
+        <p class="lead">Reach out to say hello or let us know how we can help you</p>
+        <form class="col" action="https://aws-rails.com/send_mail" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="QSRwIw2s+wxgKaPJLyuHK1E0dwh4aUn23Bra5F5NHwtjcTjX3uJzC05vnFTzYSeqrm/h+c19JZmj2iOFvyR2fA==">
+          <div class="form-label-group">
+            <input type="text" name="name" id="name" class="form-control form-control-lg" placeholder="Name">
+            <label for="name">Name</label>
+          </div>
+
+          <div class="form-label-group">
+            <input type="email" name="email" id="email" class="form-control form-control-lg" placeholder="email address">
+            <label for="email">Email address</label>
+          </div>
+
+          <div class="form-label-group">
+            <textarea name="message" id="message" class="form-control form-control-lg" rows="3" placeholder="comments"></textarea>
+            <label for="message">Comments</label>
+          </div>
+
+          <div class="btn-gradient">
+            <input type="submit" name="commit" id="contactSubmit" class="btn btn-transparent" data-disable-with="">
+          </div>
+        </form></article>
+
+    </div>
+  </div>
+</div>
+
+<%= render 'shared/footer' %>
