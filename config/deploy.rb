@@ -1,8 +1,33 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.16.0"
 
-set :application, "my_app_name"
-set :repo_url, "git@example.com:me/my_repo.git"
+require "capistrano-db-tasks"
+
+set :application, "aws-rails-appppp"
+set :repo_url, "git@github.com:oded-elocal/aws-rails.git"
+set :deploy_to, '/mnt/deploy/aws-rails'
+
+set :linked_files, fetch(:linked_files, []).push('.env', 'config/database.yml')
+set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'public/assets', 'public/system')
+
+set :keep_releases, 5
+set :keep_assets, 5
+
+set :user, 'deploy'
+set :versions_path, './config/versions.yml'
+
+set :db_local_clean, true
+set :db_remote_clean, true
+
+namespace :deploy do
+  task :restart do
+    puts 'restart !!!!!'
+  end
+
+  after :publishing, 'deploy:restart'
+  after :finishing, 'deploy:cleanup'
+end
+
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
