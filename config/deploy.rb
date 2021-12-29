@@ -1,7 +1,7 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.16.0"
 
-require "capistrano-db-tasks"
+# require "capistrano-db-tasks"
 
 set :application, "aws-rails-appppp"
 set :repo_url, "git@github.com:oded-elocal/aws-rails.git"
@@ -16,8 +16,8 @@ set :keep_assets, 5
 set :user, 'deploy'
 set :versions_path, './config/versions.yml'
 
-set :db_local_clean, true
-set :db_remote_clean, true
+# set :db_local_clean, true
+# set :db_remote_clean, true
 
 namespace :deploy do
   task :restart do
