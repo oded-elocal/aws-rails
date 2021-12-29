@@ -7,7 +7,7 @@ set :application, "aws-rails-appppp"
 set :repo_url, "git@github.com:oded-elocal/aws-rails.git"
 set :deploy_to, '/mnt/deploy/aws-rails'
 
-set :linked_files, fetch(:linked_files, []).push('.env', 'config/database.yml')
+set :linked_files, fetch(:linked_files, []).push('config/master.key', 'config/database.yml')
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'public/assets', 'public/system')
 
 set :keep_releases, 5
