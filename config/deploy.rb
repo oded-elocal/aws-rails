@@ -24,8 +24,8 @@ namespace :deploy do
     puts 'restart !!!!!'
   end
 
-  after :publishing, 'deploy:restart'
-  after :finishing, 'deploy:cleanup'
+  # after :publishing, 'deploy:restart'
+  # after :finishing, 'deploy:cleanup'
 end
 
 
