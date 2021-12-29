@@ -37,7 +37,9 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
-gem 'listen', '~> 3.3'
+gem 'listen', '3.7.0'
+gem 'rb-fsevent', '0.11.0'
+gem 'rb-inotify', '0.10.1'
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
